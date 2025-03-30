@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flowtune Docs</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-900 font-sans">
+  <header class="bg-black text-white p-4 shadow">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-3xl font-bold">Flowtune Documentation</h1>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-6 space-y-10">
+    <section>
+      <h2 class="text-2xl font-semibold">🚀 Overview</h2>
+      <p class="mt-2">Flowtune is a DSL and SDK for optimized resource loading by size, priority, and strategy. Supports Python and JavaScript.</p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold">📐 Syntax Reference</h2>
+      <ul class="list-disc ml-5 mt-2 space-y-1">
+        <li><strong>resource</strong>: define resource properties</li>
+        <li><strong>group</strong>: group multiple resources</li>
+        <li><strong>run</strong>: define execution order</li>
+        <li><strong>auto_config</strong>: apply preset security/optimization</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold">🐍 Python SDK</h2>
+      <pre class="bg-gray-100 p-4 rounded overflow-x-auto text-sm">
+pip install flowtune
+
+from flowtune.parser import QuantumFlowtuneParser
+from flowtune.executor import QuantumFlowtuneExecutor
+
+parser = QuantumFlowtuneParser('example.ft')
+parser.parse(auto_config=True)
+
+executor = QuantumFlowtuneExecutor(parser.resources, parser.groups, parser.execution_plan)
+executor.run()
+      </pre>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold">🌐 JavaScript SDK</h2>
+      <pre class="bg-gray-100 p-4 rounded overflow-x-auto text-sm">
+npm install flowtune-js
+
+import FlowtuneJS from 'flowtune-js';
+
+fetch('example.ft.json')
+  .then(res => res.json())
+  .then(data => {
+    const flowtune = new FlowtuneJS(data, {
+      allowedDomains: ['cdn.example.com'],
+      autoConfig: {
+        security: 'strict',
+        optimization: 'speed'
+      }
+    });
+    flowtune.run();
+  });
+      </pre>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold">🔗 More</h2>
+      <ul class="list-disc ml-5 mt-2">
+        <li><a href="https://github.com/zaminnes/flowtune" class="text-blue-600 hover:underline">GitHub Repository</a></li>
+        <li><a href="https://zaminnes.github.io/flowtune" class="text-blue-600 hover:underline">Hosted Docs (GitHub Pages)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 mt-10 mb-4">
+    MIT © 2025 zaminnes
+  </footer>
+</body>
+</html>
