@@ -1,0 +1,11 @@
+{
+  "name": "flowtune-js",
+  "version": "1.2.0",
+  "description": "Quantum-inspired resource loader",
+  "main": "flowtune-js.js",
+  "scripts": {
+    "test": "echo \"No tests yet\""
+  },
+  "author": "zaminnes",
+  "license": "MIT"
+}

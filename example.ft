@@ -1,0 +1,31 @@
+auto_config {
+  security: balanced
+  optimization: speed
+}
+
+resource logo {
+  url: "https://cdn.example.com/logo.png"
+  size: 80KB
+  priority: 1
+  scale: micro
+}
+
+resource video {
+  url: "https://cdn.example.com/video.mp4"
+  size: 8MB
+  priority: 5
+  scale: macro
+  lazy: true
+}
+
+group preload {
+  includes: [logo]
+  mode: parallel
+}
+
+group media {
+  includes: [video]
+  mode: sequential
+}
+
+run preload then media
